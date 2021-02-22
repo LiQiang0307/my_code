@@ -1,0 +1,113 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: LiQiang
+ * @Date: 2021-02-22 11:30:28
+ * @LastEditTime: 2021-02-22 13:05:32
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红包</title>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <style>
+        .RedBox{
+	height: 450px;
+	background-color: #ff605e;
+	width: 300px;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+	margin: 0 auto;
+	border-radius: 50% 50% 10px 10px / 15% 15% 10px 10px;
+	box-shadow: inset 0 4px 0 -1px rgba(0,0,0,0.2);
+
+}
+.topcontent {
+    height: 280px;
+    background-image: url(./images/red_02.png);
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.topcontent h2 {
+    margin: 5px 0;
+    padding-top: 100px;
+    text-align: center;
+    color: #fed261;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+.text {
+    color: #ff605e;
+    font-weight: bold;
+    padding-left: 40%;
+    text-align: center;
+    font-size: 1.5rem;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+    </style>
+</head>
+<body>
+    <div class="RedBox"  id="1" style="float:left;margin-right: 10px;">
+        <div class="topcontent" style="display: none;"> 
+            <h2 id="h1">很遗憾错失</h2>
+            <span class="text">
+                <b id="b1">1000元</b>
+            </span>
+        </div>
+    </div>
+    <div class="RedBox"  id="2" style="float:left;margin-right: 10px;">
+        <div class="topcontent" style="display: none;"> 
+            <h2 id="h2">很遗憾错失</h2>
+            <span class="text">
+                <b id="b2">1000元</b>
+            </span>
+        </div>
+    </div>
+    <div class="RedBox"  id="3" style="float:left;margin-right: 10px;">
+        <div class="topcontent" style="display: none;"> 
+            <h2 id="h3">很遗憾错失</h2>
+            <span class="text">
+                <b id="b3">1000元</b>
+            </span>
+        </div>
+    </div>
+
+    <!-- <div class="RedBox" style="float:left;margin-right: 10px;">
+        <div class="topcontent" style="display: none;"> 
+            <h2>恭喜你获得</h2>
+            <span class="text">
+                <b>0.01元</b>
+            </span>
+        </div>
+    </div> -->
+
+<script>
+    $('div').click(function(e){
+        var a=Math.random().toString().slice(0,4)+'元';
+        var id='#b'+$(this).attr('id').toString();
+        var h='#h'+$(this).attr('id').toString();
+        console.log(id);
+        $(id).html(a);
+        $(h).html('恭喜你获得');
+        $('.topcontent').attr({style:"display:block"});
+        refersh();
+    // alert($(this).attr('class'));
+});
+</script>
+<script type="text/javascript">
+    function refersh(){
+    setTimeout(function(){
+        window.location.reload();
+    },3000); }   
+    </script>
+
+</body>
+</html>
+
