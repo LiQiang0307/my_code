@@ -1,0 +1,6 @@
+<text>查询结果：</text>
+
+<view wx:for="{{postList.data}}">
+  id:{{item["id"]}} str_name:{{item["str_name"]}} str_string:{{item["str_string"]}}
+</view>
+
